@@ -1,0 +1,17 @@
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px outset rgb(0,0,0,0.18);
+    gap: 10px;
+    background-color: var(--color-cool);
+    color:var(--color-font);
+}
+.modal-container input,.modal-container textarea{
+    outline: none;
+    border: none;
+    background-color:var(--color-frost);
+    border-radius: 5px;
+}

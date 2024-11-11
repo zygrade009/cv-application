@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color-font: white;
+    --color-secondary:#0B2447;
+    --color-primary:#19376D;
+    --color-cool:#576CBC;
+    --color-frost:#A5D7E8;
+}
