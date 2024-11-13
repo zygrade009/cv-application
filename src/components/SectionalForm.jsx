@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/forms.css';
-import Modal from "../components/utils/modal/Modal";
+import Modal from "./utils/modal/Modal";
 const SectionForm = ({ sectionTitle,initialValues, inputTypes, onFormSubmit, startEditing }) => {
   const [formData, setFormData] = useState(initialValues);
   const [isEditing, setIsEditing] = useState(startEditing);
