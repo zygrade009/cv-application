@@ -1,64 +1,61 @@
-import "./content.css";
-import Modal from "../utils/modal/Modal";
-import Preview from "../preview/Preview";
-import PersonelDeatails from "../personelDetails/PersonelDeatails";
-import EducationDetails from "../educationalDetails/EducationDetails";
+
+import PersonelDeatails from "../PersonelDeatails";
+import EducationDetails from "../EducationDetails";
 import { useState } from "react";
-import ProfessionalDetails from "../profDetails/ProfessionalDetails";
+import ProfessionalDetails from "../ProfessionalDetails";
+import Preview from "../Preview";
+import "../../styles/forms.css"
+import "../../styles/content.css"
 function Content(){
-  const [personelDetails,setPersonelDetails]=useState({ Name: "Rachel Green", Email: "racheg@gmail.com", Phone: "123-456-7890" });
-
-  const [school,setSchool]=useState([
-    { id: crypto.randomUUID(), School: "Universidad Nacional José C. Paz", Degree: "Licenciatura en Informática",Date: "01/01/2021",Show: false },
-    { id: crypto.randomUUID(), School: "Universidad Nacional General Sarmiento", Degree: "Licenciatura en Informática", Date: "01/02/2022", Show: false }
-  ]);
-
-  function onSchoolChange(e, id) {
-    setSchool(school.map(singleSchool => 
-      singleSchool.id === id ? { ...singleSchool, [e.target.name]: e.target.value } : singleSchool
-    ));
-  }
+  const [personalDetails, setPersonalDetails] = useState({})
+  const [educationalDetails, setEducationalDetails] = useState({})
+  const [professionalDetails, setProfessionalDetails] = useState({})
   
-  function addSchool() {
-    setSchool([...school, { id: crypto.randomUUID(), School: "", Degree: "", StartDate: "", EndDate: "", Location: "", Show: true }]);
-  }
-  
-  
-  function removeSchool(id) {
-    setSchool(school.filter(singleSchool => singleSchool.id !== id));
-  }
-  
-  console.log("after rendering",personelDetails);
-  const handlePersonel=(e)=>{
-    e.preventDefault();
-    setPersonelDetails({
-      name:e.target.name.value,
-      email:e.target.email.value,
-      number:e.target.phone.value
+  const handlePersonalDetailsChange = (formValues) => {
+    setPersonalDetails({
+      name: formValues['name'],
+      email: formValues['email'],
+      phone: formValues['phone'],
     })
   }
+
+  const handleEducationalDetailsChange = (formValues) => {
+    setEducationalDetails({
+      degree: formValues['degree'],
+      school: formValues['school'],
+      startDate: formValues['start date'],
+      endDate: formValues['end date'],
+    })
+  }
+
+
+  const handleProfessionalDetailsChange = (formValues) => {
+    setProfessionalDetails({
+      jobTitle: formValues['job title'],
+      company: formValues['company'],
+      jobStartDate: formValues['start date'],
+      jobEndDate: formValues['end date'],
+      jobDescription: formValues['description']
+    });
+  }
+
+  console.log("after rendering");
+
   return (
-    <div className="content-container">
-        <div className="left-content">
-            <Modal>
-              <div className="content-title">Personel Details</div>    
-              <PersonelDeatails handlePersonel={handlePersonel}/>
-            </Modal>
-            <Modal>
-                <div className="content-title">Eductional Experience</div>
-                <EducationDetails/>
-            </Modal>
-            <Modal>
-                <div className="content-title">Professional Experience</div>
-                <ProfessionalDetails/>
-            </Modal>
-        </div>
-        <div className="right-content">
-           <Modal>
-            <Preview/>
-           </Modal>
-        </div>
+    <div className='app-container'>
+    <div className="forms-section">
+      <div className="forms-container">
+        <PersonelDeatails onFormSubmit={handlePersonalDetailsChange}/>
+        <EducationDetails onFormSubmit={handleEducationalDetailsChange}/>
+        <ProfessionalDetails onFormSubmit={handleProfessionalDetailsChange}/>
+      </div>
     </div>
+    <Preview
+      personalDetails={personalDetails}
+      educationalDetails={educationalDetails}
+      professionalDetails={professionalDetails}
+    />
+  </div>
   )
 }
 

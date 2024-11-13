@@ -1,0 +1,115 @@
+:root{
+    --gray-background: #eaecf2;
+    --white-background: #FFF;
+    --gray-box-shadow: rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.25) 0px 8px 16px -8px;
+    --orange-color: rgb(252, 103, 54);
+    --header-bg-color: rgb(12, 45, 87);
+}
+
+.cv-container{
+    display: flex;
+    flex-flow: column wrap;
+    width: 55rem;
+    height: 57rem;
+    box-shadow: var(--gray-box-shadow);
+    background-color: var(--white-background);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+    
+
+.full-name{
+    align-self: center;
+    color: var(--orange-color);
+}
+
+.cv-personal-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--header-bg-color);
+    margin-bottom: 1rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4{
+    padding-left: 1.3rem;
+    color: var(--header-bg-color);
+    font-size: 1.2rem;
+}
+
+.personal-details > p{
+    font-size: 1.1rem;
+    color: var(--light-orange-color);
+}
+
+.form-edu-info > p,
+.form-pro-info > p{
+    font-size: 1.2rem;
+}
+
+
+
+hr{
+    border: 1px solid var(--orange-color);
+    margin: .2rem 1rem;
+}
+
+.personal-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
+.detail-item p{
+    color: var(--light-orange-color);
+    font-size: 1.2rem;
+}
+
+.cv-report-icon {
+    font-size: 1.2rem;
+    color: var(--orange-color); 
+}
+
+.form-edu-info{
+    padding:  1rem 2rem;
+    
+}
+
+.form-pro-info{
+    padding:  1rem 2rem;
+}
+
+.dates{
+    display: flex;
+    color: rgb(128, 121, 121);
+    justify-content: flex-end;
+}
+
+.job-start-date,
+.edu-start-date{
+    margin-right: 5px;
+}
+
+.job-start-date::after,
+.edu-start-date::after{
+    content: " -";
+}
+
+.job-description{
+    font-size: 1rem;
+    color: gray;
+}
+

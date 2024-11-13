@@ -1,15 +1,14 @@
-import Header from "./components/common/header/Header"
+import Header from "./components/common/Header"
+import Footer from "./components/common/Footer";
 import Content from "./components/content/Content"
-import Footer from "./components/common/footer/Footer"
-
 function App() {
   
-  return (
-    <>
-      <Header/>
-      <Content/>
-      <Footer/>
-    </>
+  return ( 
+      <div className="body-container">
+        <Header/>
+         <Content/>
+         <Footer/>
+      </div>
   );
 }
 

@@ -1,0 +1,122 @@
+/* forms-section = download button + all forms */
+.forms-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.forms-section .save-cv-btn{
+    color: var(--orange-color);
+    display: flex;
+    gap: .7rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    position: sticky;
+    top: 0;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    background-color: white;
+}
+
+.forms-container{
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+/* form-section = h2 + form */
+.form-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 23rem;
+}
+
+form{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+.form-group{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.form-group input{
+    height: 1rem;
+    border: none;
+    font-size: 1.1rem;
+    padding:  1rem .5rem;
+    margin-top: 4px;
+    border-radius: 5px;
+   
+}
+
+.form-group textarea{
+    padding: 3px;
+    border: none;
+    font-size: 1rem;
+    padding: .5rem;
+    margin-top: 4px;
+    border-radius: 5px;
+    max-width: 24rem;
+    max-height: 8rem;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.form-icon{
+    margin-right: 3px;
+}
+
+
+.form-buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.empty-form-box h2{
+    color: black;
+}
+.cancel-btn{
+    flex: 1;
+    background-color: var(--light-blue-color);
+    color: white;
+}
+
+.save-btn{
+    background-color: var(--orange-color);
+    color: white;
+}
+
+.edit-btn{
+    background-color: var(--light-orange-color);
+}
+strong{
+    margin-right: 5px;
+}
+
+.empty-form-box {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 4px 25px -6px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  
+
+  .empty-form-box p{
+    color: gray;
+  }

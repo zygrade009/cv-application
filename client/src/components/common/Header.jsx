@@ -1,8 +1,7 @@
-import "./header.css";
+import "../../styles/header.css";
 
 function Header() {
   return (
-    
       <div className="container">
         <div className="title">Make CV</div>
       </div>
